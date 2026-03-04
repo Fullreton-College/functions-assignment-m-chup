@@ -2,14 +2,33 @@
 #include <cstdlib>
 using namespace std;
 
-/* Define your function here */ 
+string CoinFlip()
+{
+    int flip = (rand() % 2);
+    if (flip == 0)
+    {
+        return "Tails";
+    }
+    else if (flip == 1)
+    {
+        return "Heads";
+    }
+}
 
 int main() {
-   // Add more variables as needed
+   int flipsnum;
    
-   srand(2);  // Unique seed
+   srand(2);
 
-   /* Type your code here */
+   cout << "Enter number of coin flips: ";
+   cin >> flipsnum;
+   cout << "The coin flip results are: ";
+
+   for (int iterations = 1; iterations <= flipsnum; iterations++)
+   {
+    cout << CoinFlip() << " ";
+   }
+   cout << endl;
 
    return 0;
 }
